@@ -22,6 +22,10 @@ config :rocketpay, Rocketpay.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
 
+config :rocketpay, :basic_auth,
+  username: System.get_env("APP_USERNAME"),
+  password: System.get_env("APP_PASSWORD")
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
